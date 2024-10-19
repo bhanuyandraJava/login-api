@@ -15,8 +15,10 @@ pip install djangorestframework
 
 Running API in local
 ----------------------------
- python manage.py runserver
- 
+
+python manage.py migrate
+
+python manage.py runserver 
 
 
 API URL
