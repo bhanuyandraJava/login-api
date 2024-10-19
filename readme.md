@@ -53,4 +53,6 @@ CORS_ALLOWED_ORIGINS = [
 POSTMAN Test:
 ------------
 
+![Screenshot](/postman-test.png)
+
 ![img.png](img.png)
