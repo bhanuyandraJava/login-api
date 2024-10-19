@@ -4,7 +4,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.exceptions import ValidationError
-from rest_framework.permissions import AllowAny
 
 
 def generate_random_string(length):
@@ -14,7 +13,6 @@ def generate_random_string(length):
 
 
 class LoginAPIView(APIView):
-    permission_classes = [AllowAny]
 
     def post(self, request):
         username = request.data.get('username')
