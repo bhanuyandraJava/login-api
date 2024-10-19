@@ -55,4 +55,3 @@ POSTMAN Test:
 
 ![Screenshot](/postman-test.png)
 
-![img.png](img.png)
