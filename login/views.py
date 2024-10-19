@@ -7,6 +7,12 @@ from django.core.exceptions import ValidationError
 from rest_framework.permissions import AllowAny
 
 
+def generate_random_string(length):
+    characters = string.ascii_letters + string.digits
+    random_string = ''.join(secrets.choice(characters) for i in range(length))
+    return random_string
+
+
 class LoginAPIView(APIView):
     permission_classes = [AllowAny]
 
@@ -23,7 +29,7 @@ class LoginAPIView(APIView):
         user = self.authenticate(username, password);
 
         if user is not None:
-            token = self.generate_random_string(16);
+            token = generate_random_string(16);
             return Response({
                 'token': token
             }, status=status.HTTP_200_OK)
@@ -50,10 +56,5 @@ class LoginAPIView(APIView):
             return 'Login Successful';
 
         return None;
-
-    def generate_random_string(self, length):
-        characters = string.ascii_letters + string.digits
-        random_string = ''.join(secrets.choice(characters) for i in range(length))
-        return random_string
 
 
